@@ -5,6 +5,18 @@ import Forms from "../Component/Forms.jsx";
 
 
 const HomePage = () => {
+    const data=[{
+        img:"../public/logo-2.png"
+    },{
+        img:"/logo-3.png"
+    },{
+        img:"/logo-4.png"
+    },{
+        img:"/logo-4.png"
+    },{
+            img:"/logo-4.png"
+        }
+    ]
     return (
         <MsLayout>
            <div className="container lg:flex mt-5 justify-between p-10 mb-50">
@@ -26,11 +38,15 @@ const HomePage = () => {
 
            </div>
             <div className="lg:flex pb-15 container justify-between mt-10">
-                <img className="ml-10" src="../src/assets/imges/logo-1.png"/>
-                <img src="../src/assets/imges/logo-2.png"/>
-                <img src="../src/assets/imges/logo-3.png"/>
-                <img src="../src/assets/imges/logo-4.png"/>
-                <img className="" src="../src/assets/imges/logo-1.png"/>
+                {
+                    data.map((item,i)=>{
+                        return(
+                            <div key={i}>
+                                <img src= {item['img']}/>
+                            </div>
+                        )
+                    })
+                }
             </div>
             <div className="myhm ml-10 pb-50">
                 <div className="mb-50 ml-50">
